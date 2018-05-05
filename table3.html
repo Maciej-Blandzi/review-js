@@ -1,0 +1,66 @@
+
+<style>
+    td {
+        /*border: 1px solid black;*/
+        width: 50px;
+        height: 50px;
+    }
+    .red{
+        background-color: red;
+    }
+</style>
+<div id="app"></div>
+<script src="table3.js"></script>
+<script>
+
+    var width = 10;
+    var height = 10;
+    var size = height * width;
+
+
+    var app = document.getElementById('app');
+    app.appendChild(createTable(width,height));
+
+
+    app.addEventListener('click', function (event) {
+        if (event.target.matches('td')) {
+            toggleRed(event.target)
+        }
+    })
+
+
+
+//    var i =0;
+//    var IntervalId = setInterval(function(){
+//        var cells = app.querySelectorAll('td')
+//        toggleRed(cells[i])
+//        i = (i+1) % size
+//    },20)
+//    setTimeout(function(){clearInterval(IntervalId)},5000)
+
+    var IntervalId = setInterval(function(){
+        var cells = app.querySelectorAll('td')
+        if(cells.length === 0){
+            clearInterval(intervalId)
+            return
+        }var x = Math.floor(Math.random() * cells.length)
+        toggleRed(cells[x])
+
+
+
+
+    },5)
+
+
+//    var intervalId = setInterval(function () {
+//        var cells = app.querySelectorAll('td');
+//        if (cells.length === 0) {
+//            clearInterval(intervalId);
+//            return;
+//        }
+//        var index = Math.floor(Math.random() * cells.length);
+//        toggleRed(cells[index]);
+//    }, 10);
+
+
+    </script>

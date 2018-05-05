@@ -1,0 +1,40 @@
+
+<style>
+    td {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+    }
+    .red{
+        background-color: red;
+    }
+</style>
+<div id="app"></div>
+<script src="table2.js"></script>
+<script>
+    var app = document.getElementById('app');
+    app.appendChild(createTable());
+
+
+    app.addEventListener('click', function (event) {
+        if (event.target.matches('td')) {
+           toggleRed(event.target)
+        }
+    })
+
+var intervalId = setInterval(function(){
+   var cells =  app.querySelectorAll('td')
+    cells.forEach(function(cell){
+        toggleRed(cell);
+    })
+
+
+},400)
+setTimeout(function(){clearInterval(intervalId)},4000)
+
+
+
+
+
+
+</script>

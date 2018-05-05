@@ -1,0 +1,67 @@
+<style>
+    td {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+    }
+    .red{
+        background-color: red;
+    }
+    .green{
+        background-color: green;
+    }
+
+</style>
+<div id="app"></div>
+<div id="score"></div>
+<div id="time"></div>
+<script src="table5-game1.js"></script>
+<script>
+
+    var width = 5;
+    var height = 5;
+    var score = 0;
+
+    var selector = 'td:not(.red):not(.green)';
+
+
+    var app = document.getElementById('app');
+    var scoreNode = document.getElementById('score')
+    scoreNode.textContent = score + ' points'
+    app.appendChild(createTable(width,height));
+
+
+    app.addEventListener('click', function (event) {
+        if (event.target.matches(selector)) {
+            toggleClass(event.target)
+            score +=1
+            scoreNode.textContent = score +' points'
+        }
+    })
+
+    var intervalId = setInterval(function () {
+        var cells = app.querySelectorAll(selector);
+        if (cells.length === 0) {
+            clearInterval(intervalId);
+            clearInterval(interval2)
+            return;
+        }
+        var index = Math.floor(Math.random() * cells.length);
+        toggleClass(cells[index]);
+    }, 200);
+
+//======= TIMER ==================
+var time = 0;
+var timeNode = document.getElementById('time')
+    timeNode.textContent= time + ' seconds'
+    var interval2 = setInterval(function(){
+        if(time === 10){
+            clearInterval(interval2)
+        }
+        time += 1;
+        timeNode.textContent = time + ' seconds'
+    },1000)
+
+
+
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="table.js"></script>
+    <style>
+        #macia{
+            width: 500px;
+            color: red;
+            height: 200px
+        }
+        td{
+            border: 1px black solid;
+            width: 30px;
+            height: 30px;
+        }
+        .red{
+            background-color: red;
+        }
+        .blank{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="macia">
+</div>
+
+<script>
+
+    var macia = document.getElementById('macia')
+    //creating table within macia
+        macia.appendChild(createTable(15,15));
+    //adding event listener 'click' and toggle class within td's
+        macia.addEventListener('click', klikniecie);
+
+
+
+
+
+
+
+//    macia.addEventListener('click',function klik(klikniecie) {
+//    if (klikniecie.target.matches('td')) {
+//        if (klikniecie.target.classList.contains('red')) {
+//            klikniecie.target.classList.remove('red')
+//        }
+//     else {
+//        klikniecie.target.classList.add('red')
+//    }
+//}});
+
+
+
+
+
+
+
+
+
+    console.log(macia);
+</script>
+</body>
+</html>
