@@ -1,0 +1,25 @@
+
+.box2{
+
+    background-color: red;
+    height: 20px;
+    border: #4CAF50 solid 1px;
+}
+.box3{
+    font-size: 3em;
+    color: #6eff2a;
+}
+#lay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#middle{
+    /*margin-top: 300px;*/
+    /*margin-left: 400px;*/
+    color: red;
+    border: 2px solid red;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}

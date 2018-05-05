@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+<div id="lay">
+    <div id="time"></div>
+    <div id="middle"><h1>hello<span id="name"> man</span></h1></div>
+</div>
+
+
+
+<p>Please click on the checkbox control.</p>
+
+<form>
+    <label for='checkbox'>Checkbox:</label>
+    <input type='checkbox' id='checkbox'/>
+</form>
+
+<div id='output'></div>
+
+<div id="message"></div>
+<input type="text" id="username" placeholder="name goes here"/>
+
+
+
+<div class="box1" id="yeye"><a href="#">LINK 1</a></div>
+<div class="box1"><a href="#">LINK 1</a></div>
+<div class="box1"><a href="#">LINK 1</a></div>
+<div class="box2"><a href="#">LINK 1</a></div>
+<div class="box2"><a href="#">LINK 1</a></div>
+<div class="box2"><a href="#">LINK 1</a></div>
+<div class="box2"><a href="#">LINK 1</a></div>
+<div class="box1"><a href="#">LINK 1</a></div>
+
+<script>
+
+    // ====       focus on input================================
+    // var inpfoc = document.getElementById('username');
+    // function start(){
+    //     inpfoc.focus()  }
+    // window.addEventListener('load', start, false);
+    //
+
+
+
+    //====================       timer  ===============================
+    var time = 90;
+    var timeNode = document.getElementById('time');
+    timeNode.style.fontSize = '4em';
+    timeNode.style.fontWeight = '900'
+    timeNode.style.color = 'red'
+    timeNode.textContent = time + ' seconds';
+    var intervalId = setInterval(function(){
+        time -=1;
+        if(time === 0){
+            clearInterval(intervalId);
+            timeNode.style.fontSize = '4em';
+            timeNode.style.fontWeight = '900';
+            timeNode.style.color = 'red';
+            document.getElementById('name').textContent=('  macia');
+        }
+        timeNode.textContent = time + ' seconds';
+
+    },10)
+    // setTimeout(function(){clearInterval(intervalId)},10000)
+
+
+    // ===============       input with minimum digits ======================
+    function check(usr, minLength){
+        if(usr.value.length < minLength){
+            msg1.textContent = 'minimum 5 digits please:'
+        }else
+        { msg1.textContent = ''}
+    }
+    function check2(usr, minLength){
+        if(usr.value.length < minLength){
+            msg1.textContent = 'still not anough letters below...'
+        }else
+        { msg1.textContent = ''}
+    }
+
+    var usr = document.getElementById('username')
+    var msg1 = document.getElementById('message');
+    usr.addEventListener('focus', function(){check(usr, 6)},false)
+    usr.addEventListener('blur', function(){check2(usr, 6)},false)
+
+
+
+
+    //================           checkbox============================================================
+    var test = document.getElementById('checkbox')
+    var mess = document.getElementById('output')
+
+    test.addEventListener('click', function(event) {
+        mess.innerHTML += 'Sorry! I won\'t ALLOW you check HERE!';
+        event.preventDefault();
+    }, false);
+
+
+
+
+
+    // click event ====================== closing splash screen
+
+    var msg ='<div><h1>ACHTUNG</h1>'
+    msg+= 'the X sign below '
+    msg+= 'dismisses this notice</div>'
+    msg+= '<p></p> '
+    msg+= '<div class=\'header\'><a href=\"#\" id=\"close\">close X</a></div>'
+
+    var tablica = document.createElement('div')
+    tablica.style.border = '1px solid black'
+    tablica.style.backgroundColor = 'lightblue'
+    tablica.style.width = '300px'
+    tablica.style.marginLeft = '300px'
+    document.body.appendChild(tablica)
+    tablica.innerHTML = msg;
+
+    function exit(){
+        document.body.removeChild(tablica)
+    }
+
+    var closing = document.getElementById('close')
+    closing.addEventListener('click',exit,false)
+
+
+
+</script>
+
+
+<script src="index.js"></script>
+</body>
+</html>
+
