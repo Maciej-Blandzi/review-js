@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #field{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="field">
+
+</div>
+<script>
+
+    var field = document.getElementById('field')
+    function slide(){
+        var height = parseInt(field.style.height || 0, 10) +1;
+        field.style.height = height+'px'
+        if(height>800){return}
+        requestAnimationFrame(slide)
+        }
+slide()
+</script>
+</body>
+</html>
+

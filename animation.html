@@ -1,0 +1,53 @@
+
+<style>
+    #app {
+        background: red;
+    }
+</style>
+<div id="app"></div>
+<script>
+    var app = document.getElementById('app');
+    function grow() {
+        var height = parseInt(app.style.height || 0, 10) + 10;
+        app.style.height = height + 'px';
+        if (height > 600) {
+            return;
+        }
+        requestAnimationFrame(grow);
+    }
+    grow();
+</script>
+
+
+<!--<style>-->
+    <!--#app {-->
+        <!--background: red;-->
+    <!--}-->
+<!--</style>-->
+<!--<div id="app"></div>-->
+<!--<script>-->
+    <!--var app = document.getElementById('app');-->
+<!--//    var begin = Date.now();-->
+<!--//    function pad(x) {-->
+<!--//        return (x < 10 ? '0' : '') + x.toString()-->
+<!--//    }-->
+    <!--function grow() {-->
+<!--//        var now = Date.now();-->
+<!--//        var time = new Date();-->
+<!--//        var hour = time.getHours();-->
+<!--//        var minutes = time.getMinutes();-->
+<!--//        var seconds = time.getSeconds();-->
+<!--//-->
+<!--//        app.innerText = [hour, minutes, seconds].map(pad).join(':');-->
+        <!--var height = parseInt(app.style.height || 0, 10) + 1;-->
+        <!--app.style.height = height + 'px';-->
+        <!--// Animacja zatrzyma się jeżeli miną 2 sekundy lub #app osiągnie-->
+        <!--// wysokość 1000px-->
+<!--//        if (now - begin > 2000 || height > 800) {-->
+        <!--if (height >200){-->
+            <!--return;}-->
+<!--//        }-->
+        <!--requestAnimationFrame(grow);-->
+    <!--}-->
+    <!--grow();-->
+<!--</script>-->
