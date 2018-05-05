@@ -5,17 +5,25 @@
     <title>Title</title>
     <style>
        #formdiv{
-           width:200px;
+           width:290px;
            background: pink;
            border: 5px red solid;
            padding: 10px
        }
         #notes{
-            width: 200px;
+            width: 300px;
             height: auto;
             background: lightblue;
             padding: 10px;
             text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        #submit{
+            width: 70px;
+            align-self: center;
         }
     </style>
 </head>
@@ -25,7 +33,9 @@
     <form action="" method="post">
         <label for="name">NAME</label>
         <input type="text" placeholder="name" id="name"/>
-        <button type="submit">SAVE</button>
+        <label for="description">DESCRIPTION</label>
+        <textarea id="description" placeholder="description"></textarea>
+        <button type="submit" id="submit">SAVE</button>
 
     </form>
 </div>
