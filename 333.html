@@ -1,0 +1,150 @@
+
+
+<div id="yeye">
+
+</div>
+<div id="time"></div>
+<style>
+    td{
+        width:30px;
+        height:30px;
+        border: 1px black solid;
+    }
+    .red{
+        background-color: red
+    }
+</style>
+<script src="333.js"></script>
+<script>
+
+    var width = 30;
+    var height = 30;
+
+    document.getElementById('yeye').appendChild(createTable(width, height));
+
+
+
+
+
+yeye.addEventListener('click',function(zdarzenie){
+    if(zdarzenie.target.matches('td')){
+    toggleRed(event.target)
+    }
+});
+
+    document.querySelectorAll('td')[2].classList.add('booya');
+    yeye.addEventListener('dblclick', function(zdarzenie){
+        if(zdarzenie.target.matches('.booya')){
+            console.log('boooya')
+        }
+
+    })
+
+
+//    setInterval(function(){
+//        var cells = yeye.querySelectorAll('td');
+//        cells.forEach(function(cells){
+//            toggleRed(cells)
+//        })
+//
+//    },1000);
+
+//insted u get this:
+
+//    var intervalId = setInterval(function () {
+//        var cells = yeye.querySelectorAll('td:not(.red)');
+//        if (cells.length === 0) {
+//            clearInterval(intervalId);
+//            return;
+//        }
+//        var index = Math.floor(Math.random() * cells.length);
+//        toggleRed(cells[index]);
+//    }, 10);
+//
+//
+//
+//    //timer
+//
+//    timeNode = document.getElementById('time');
+//    var time = 0;
+//    var timerIntervalId = setInterval(function(){
+//
+//
+//        time+=1;
+//
+//        timeNode.innerText = time + '  seconds';
+//
+//        if(time ===5){
+//            clearInterval(timerIntervalId);
+//        clearInterval(intervalId)}
+//
+//    },1000);
+
+
+
+
+
+
+
+
+
+
+
+
+    //times ends
+
+
+
+
+
+
+
+
+
+//    var i = 0;
+//    setInterval(function () {
+//        var cells = yeye.querySelectorAll('td');
+//        toggleRed(cells[i]);
+//        i = (i + 1) %100;
+//    }, 100);
+
+//yeye.addEventListener('mousedown',function(event){
+//    if(event.target.matches('td')) {
+//        event.target.style.backgroundColor = 'red';
+//    }
+//})
+//yeye.addEventListener('mouseover', function(zdarzenie){
+//    if(zdarzenie.target.matches('td')){
+//    event.target.style.backgroundColor = 'green'}
+//}    )
+
+
+
+
+//yeye.addEventListener('click', function(ev){
+//    if(ev.target.matches('td')){
+//    event.target.style.backgroundColor = 'blue'}
+//if(event.target.style.backgroundColor = 'blue' ){
+//
+//}
+//
+//}
+//    );
+//
+//yeye.addEventListener('dblclick', function(clickkk){
+//    if(clickkk.target.matches('td')){
+//        event.target.style.backgroundColor = 'white'}}
+//)
+//
+
+
+//setInterval(function(){
+//    var cell = yeye.querySelector('td');
+//    if (cell.classList.contains('red')) {
+//        cell.classList.remove('red')
+//    } else {
+//        cell.classList.add('red')
+//    }
+//}, 1000);
+
+</script>

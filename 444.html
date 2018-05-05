@@ -1,0 +1,83 @@
+
+
+<div id="blok">
+</div>
+
+<style>
+    td{
+width: 40px;
+        height: 40px;
+        border: 2px black solid;
+    }
+    .red{
+        background-color: red;
+    }
+
+    .black{
+        background-color: black;
+    }
+
+</style>
+
+
+
+<script>
+
+    document.getElementById('blok');
+
+    var table = document.createElement('table');
+
+    blok.appendChild(table);
+
+
+    for(var i=0;i<10;i+=1){
+        var tr = document.createElement('tr');
+        table.appendChild(tr);
+
+            for (var y = 0; y < 10; y += 1) {
+                var td = document.createElement('td')
+                tr.appendChild(td);
+                td.classList.add('black');
+            }
+    }
+
+
+
+ blok.addEventListener('click', function(klikniecie){
+     if(klikniecie.target.classList.contains('black)')){
+         klikniecie.target.classList.remove('black')
+     }else{klikniecie.target.classList.add('red')}
+
+
+
+
+    })
+
+
+    //yeye.addEventListener('click', function(ev){
+    //    if(ev.target.matches('td')){
+    //    event.target.style.backgroundColor = 'blue'}
+    //if(event.target.style.backgroundColor = 'blue' ){
+    //
+    //}
+    //
+    //}
+    //    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
