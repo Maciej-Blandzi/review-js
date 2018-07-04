@@ -4,9 +4,9 @@ function createTable(width,height)
 {
 
     var table = document.createElement('table')
-    var tbody = document.createElement('tbody')
+
     macia.appendChild(table)
-    table.appendChild(tbody)
+
 
 
     var tr, td;
